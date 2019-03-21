@@ -97,7 +97,7 @@ public class Merge {
   }
 
   public static void main(String[] args) {
-    int[] a = {34,12,54,234,634,2};
+    int[] a = {34,12,54,234,634,2,1,1,1,1,12,34,1,1,1,1,1,1,2,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,12,21,312,31,756,123,123,1231,312,31,54332,4634634,432525,63,45,132,764,435,756,34};
     System.out.println(toString(a));
     mergesort(a);
     System.out.println(toString(a));
