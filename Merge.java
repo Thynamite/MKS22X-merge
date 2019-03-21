@@ -7,7 +7,7 @@ public class Merge {
     }
     else {
       int[] left = makeArray(data, 0, data.length /2);
-      int[] right = makeArray(data, data.length/2, data.length-1);
+      int[] right = makeArray(data, (data.length/2)+1, data.length-1);
 
       mergesort(left);
       mergesort(right);
@@ -25,7 +25,7 @@ public class Merge {
 
     while (l < left.length && r < right.length) {
 
-      if  (left[l] > right[r]) {
+      if  (r >= left.length || left[l] > right[r]) {
         data[index] = left[l];
         l++;
       }
