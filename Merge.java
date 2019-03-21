@@ -19,13 +19,20 @@ public class Merge {
 
 
   public static void mergesorth(int[] left ,int[] right, int[] data) {
+    int size;
+    if (left.length - right.length < 0) {
+      size = right.length-left.length;
+    }
+    else {
+      size = left.length-right.length;
+    }
     int l = 0;
     int r = 0;
     int index = 0;
 
     while (l < left.length && r < right.length) {
 
-      if  (r >= left.length || left[l] > right[r]) {
+      if  (r >= left.length || left[l] >= right[r]) {
         data[index] = left[l];
         l++;
       }
