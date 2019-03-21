@@ -26,23 +26,24 @@ public class Merge {
     else {
       size = left.length-right.length;
     }
-    int l = 0;
-    int r = 0;
-    int index = 0;
 
-    while (l < size && r <= size+1) {
+    int place = 0;
 
-      if  (r >= left.length || left[l] <= right[r]) {
-        data[l+r] = left[l];
-        l++;
+    for (int l = 0; l < size; l++) {
+      for (int r = place; r < size; r++) {
+        if (left[l] <= right[r]) {
+          data[l+r] = left[l];
+          r = size;
+        }
+        else {
+          data[l+r] = right[r];
+          place++;
+        }
       }
-      else {
-        data[index] = right[r];
-        r++;
-      }
-      index++;
     }
-
+    for (int x = size + place, counter =0; x < data.length; x++, counter++) {
+      data[x] = right[counter+x];
+    }
   }
 
   public static int[] makeArray(int[] data, int low, int high) {
