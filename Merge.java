@@ -26,8 +26,8 @@ public class Merge {
     else {
       size = left.length;
     }
-  
-    System.out.println(size);
+
+    //System.out.println(size);
     int place = 0;
 
     for (int l = 0; l < size; l++) {
@@ -54,7 +54,7 @@ public class Merge {
       dummy[index] = data[x];
       index++;
     }
-    System.out.println(toString(dummy));
+    //System.out.println(toString(dummy));
     return dummy;
   }
 
