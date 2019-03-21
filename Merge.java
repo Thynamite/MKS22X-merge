@@ -6,8 +6,8 @@ public class Merge {
       return;
     }
     else {
-      int[] left = makeArray(data, 0, data.length /2);
-      int[] right = makeArray(data, (data.length/2)+1, data.length-1);
+      int[] left = makeArray(data, 0, (data.length /2)-1);
+      int[] right = makeArray(data, (data.length/2), data.length-1);
 
       mergesort(left);
       mergesort(right);
@@ -41,16 +41,26 @@ public class Merge {
   public static int[] makeArray(int[] data, int low, int high) {
     int[] dummy = new int[(high-low)+1];
     int index = 0;
-    for (int x = low; x < high; x++) {
+    for (int x = low; x <= high; x++) {
       dummy[index] = data[x];
       index++;
     }
+    System.out.println(toString(dummy));
     return dummy;
   }
 
   public static void main(String[] args) {
     int[] a = {34,12,54,234,634,2};
+    System.out.println(toString(a));
     mergesort(a);
+    System.out.println(toString(a));
   }
 
+  public static String toString(int[] data) {
+    String test = "";
+    for (int x = 0; x < data.length; x++) {
+      test += " " + data[x];
+    }
+    return test;
+  }
 }
