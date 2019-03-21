@@ -5,6 +5,9 @@ public class Merge {
     if (data.length < 2) {
       return;
     }
+    else if (data.length < 36) { //k is
+      insertionSort(data);
+    }
     else {
       int[] left = makeArray(data, 0, (data.length /2)-1);
       int[] right = makeArray(data, (data.length/2), data.length-1);
@@ -16,10 +19,11 @@ public class Merge {
     }
 
   }
+
   public static void insertionSort(int[] data) {
   int storage = 0;                                                                      //still can't instantiate ints without a value
   for (int x = 1; x < data.length; x++) {                                               //start at 1, as a size 1 array is already sorted, and should be comparing to that at the start
-    if (data[x] < data[x-1]) {                                                         //checks if the element needs to be placed inside the sorted(greater value is sorted already on the rightmost of the array)
+    if (data[x] <= data[x-1]) {                                                         //checks if the element needs to be placed inside the sorted(greater value is sorted already on the rightmost of the array)
       storage = data[x];                                                                //stores the value
       //System.out.println(storage);                                                    //testing
       int c = x;                                                                        //since this loop looks at the left value to compare, it would need to start at the stored value
