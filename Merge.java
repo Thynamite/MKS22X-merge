@@ -20,20 +20,21 @@ public class Merge {
 
   public static void mergesorth(int[] left ,int[] right, int[] data) {
     int size;
-    if (left.length - right.length < 0) {
-      size = right.length-left.length;
+    if (right.length - left.length < 0) {
+      size = right.length;
     }
     else {
-      size = left.length-right.length;
+      size = left.length;
     }
-
+  
+    System.out.println(size);
     int place = 0;
 
     for (int l = 0; l < size; l++) {
       for (int r = place; r <= size +1; r++) {
         if (r >= right.length || left[l] <= right[r]) {
           data[l+r] = left[l];
-          r = size+2;
+          r = size+3;
         }
         else {
           data[l+r] = right[r];
@@ -53,7 +54,7 @@ public class Merge {
       dummy[index] = data[x];
       index++;
     }
-    //System.out.println(toString(dummy));
+    System.out.println(toString(dummy));
     return dummy;
   }
 
