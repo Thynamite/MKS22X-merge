@@ -11,18 +11,31 @@ public class Merge {
 
       mergesort(left);
       mergesort(right);
-      
+
+      mergesorth(left, right, data);
     }
 
   }
 
 
   public static void mergesorth(int[] left ,int[] right, int[] data) {
-    if (low >= high) {
-      return;
+    int l = 0;
+    int r = 0;
+    int index = 0;
+
+    while (l < left.length && r < right.length) {
+
+      if  (left[l] > right[r]) {
+        data[index] = left[l];
+        l++;
+      }
+      else {
+        data[index] = right[r];
+        r++;
+      }
+      index++;
     }
 
-    int pivot = low + (high -low +1) /2;
   }
 
   public static int[] makeArray(int[] data, int low, int high) {
