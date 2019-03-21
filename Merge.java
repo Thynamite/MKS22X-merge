@@ -30,10 +30,10 @@ public class Merge {
     int r = 0;
     int index = 0;
 
-    while (l < left.length && r < right.length) {
+    while (l < size && r <= size+1) {
 
-      if  (r >= left.length || left[l] >= right[r]) {
-        data[index] = left[l];
+      if  (r >= left.length || left[l] <= right[r]) {
+        data[l+r] = left[l];
         l++;
       }
       else {
