@@ -30,10 +30,10 @@ public class Merge {
     int place = 0;
 
     for (int l = 0; l < size; l++) {
-      for (int r = place; r < size; r++) {
-        if (left[l] <= right[r]) {
+      for (int r = place; r <= size +1; r++) {
+        if (r >= right.length || left[l] <= right[r]) {
           data[l+r] = left[l];
-          r = size;
+          r = size+2;
         }
         else {
           data[l+r] = right[r];
@@ -42,7 +42,7 @@ public class Merge {
       }
     }
     for (int x = size + place, counter =0; x < data.length; x++, counter++) {
-      data[x] = right[counter+x];
+      data[x] = right[counter+place];
     }
   }
 
@@ -53,7 +53,7 @@ public class Merge {
       dummy[index] = data[x];
       index++;
     }
-    System.out.println(toString(dummy));
+    //System.out.println(toString(dummy));
     return dummy;
   }
 
